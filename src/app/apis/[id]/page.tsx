@@ -73,8 +73,12 @@ export async function generateStaticParams() {
   return Object.keys(apis).map((id) => ({ id }));
 }
 
-export default function APIDocumentationPage({ params }: { params: { id: string } }) {
-  const api = apis[params.id as keyof typeof apis];
+// Force static generation
+export const dynamicParams = false;
+
+export default async function APIDocumentationPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const api = apis[id as keyof typeof apis];
 
   if (!api) {
     notFound();
