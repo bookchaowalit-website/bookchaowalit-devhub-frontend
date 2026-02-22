@@ -185,7 +185,7 @@ export default function HomePage() {
           {apis.map((api) => (
             <Link
               key={api.id}
-              href={`/api/${api.id}`}
+              href={`/apis/${api.id}`}
               className="group relative bg-slate-800/50 hover:bg-slate-800 rounded-xl p-6 border border-slate-700/50 hover:border-slate-600 transition-all block"
             >
               <div className="flex items-start justify-between mb-4">
