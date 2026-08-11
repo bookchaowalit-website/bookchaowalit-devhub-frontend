@@ -1,74 +1,21 @@
 import Link from "next/link";
 import { Code2, Database, Zap, Book, FileText, Globe, ArrowRight, CheckCircle2, Github, Twitter, Mail } from "lucide-react";
+import { API_CATALOG } from "@/lib/api-catalog";
+
+const ICON_MAP = {
+  code: <Code2 className="w-6 h-6" />,
+  file: <FileText className="w-6 h-6" />,
+  book: <Book className="w-6 h-6" />,
+  database: <Database className="w-6 h-6" />,
+  globe: <Globe className="w-6 h-6" />,
+} as const;
 
 export default function HomePage() {
-  const apis = [
-    {
-      id: "portfolio",
-      name: "Portfolio API",
-      description: "Access projects, skills, blog posts, and GitHub activity",
-      longDescription: "Comprehensive portfolio API providing access to all your professional information including projects, technical skills, blog posts, and GitHub contribution data.",
-      icon: <Code2 className="w-6 h-6" />,
-      status: "online",
-      statusColor: "green",
-      endpoints: 6,
-      category: "Portfolio",
-      url: "https://bookchaowalit-portfolio-frontend.vercel.app/api/mcp",
-      features: ["Projects data", "Skills taxonomy", "Blog posts", "GitHub integration"]
-    },
-    {
-      id: "techblog",
-      name: "Tech Blog API",
-      description: "Technical articles and programming content",
-      longDescription: "Access technical articles, tutorials, and programming insights from the Tech Blog with full search and filtering capabilities.",
-      icon: <FileText className="w-6 h-6" />,
-      status: "online",
-      statusColor: "green",
-      endpoints: 3,
-      category: "Content",
-      url: "https://bookchaowalit-techblog-frontend.vercel.app/api/mcp",
-      features: ["Technical articles", "Search by query", "Post retrieval", "Category filtering"]
-    },
-    {
-      id: "artblog",
-      name: "Art Blog API",
-      description: "Creative arts and design content",
-      longDescription: "Explore creative arts content including illustrations, graphic design, photography, and digital art with rich metadata and tagging.",
-      icon: <Book className="w-6 h-6" />,
-      status: "online",
-      statusColor: "green",
-      endpoints: 3,
-      category: "Content",
-      url: "https://bookchaowalit-artblog-frontend.vercel.app/api/mcp",
-      features: ["Art posts", "Tag-based filtering", "Creative content", "Design resources"]
-    },
-    {
-      id: "techspace",
-      name: "Tech Space API",
-      description: "Technology stacks and development platforms",
-      longDescription: "Comprehensive information about technology stacks, development platforms, and tools used in modern software development.",
-      icon: <Database className="w-6 h-6" />,
-      status: "online",
-      statusColor: "green",
-      endpoints: 6,
-      category: "Tech",
-      url: "https://bookchaowalit-techspace-frontend.vercel.app/api/mcp",
-      features: ["Stack information", "Platform details", "Tool descriptions", "Best practices"]
-    },
-    {
-      id: "mcp",
-      name: "MCP List Hub",
-      description: "Central aggregator for all MCP servers",
-      longDescription: "The central hub that aggregates all MCP servers, providing discovery, documentation, and proxy functionality for the entire ecosystem.",
-      icon: <Globe className="w-6 h-6" />,
-      status: "online",
-      statusColor: "green",
-      endpoints: 3,
-      category: "Infrastructure",
-      url: "https://bookchaowalit-mcplist-frontend.vercel.app/api/mcp",
-      features: ["Server discovery", "Tool aggregation", "Proxy functionality", "Documentation"]
-    }
-  ];
+  const apis = API_CATALOG.map((entry) => ({
+    ...entry,
+    icon: ICON_MAP[entry.icon],
+    statusColor: entry.status === "online" ? "green" : "yellow",
+  }));
 
   const features = [
     {
