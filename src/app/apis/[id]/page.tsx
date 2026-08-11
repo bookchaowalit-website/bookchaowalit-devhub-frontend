@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 
 const apis = {
   portfolio: {
@@ -87,9 +88,9 @@ export default async function APIDocumentationPage({ params }: { params: Promise
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800">
       <div className="container mx-auto px-4 py-12">
-        <a href="/" className="inline-flex items-center text-slate-400 hover:text-white mb-8">
+        <Link href="/" className="inline-flex items-center text-slate-400 hover:text-white mb-8">
           ← Back to DevHub
-        </a>
+        </Link>
 
         <div className="max-w-4xl">
           <div className="flex items-center gap-4 mb-4">

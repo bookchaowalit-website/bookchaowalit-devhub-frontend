@@ -87,9 +87,9 @@ export default function DocsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800">
       <div className="container mx-auto px-4 py-12">
-        <a href="/" className="inline-flex items-center text-slate-400 hover:text-white mb-8">
+        <Link href="/" className="inline-flex items-center text-slate-400 hover:text-white mb-8">
           ← Back to DevHub
-        </a>
+        </Link>
 
         <div className="max-w-4xl">
           {/* Header */}
@@ -156,7 +156,7 @@ export default function DocsPage() {
             <h2 className="text-2xl font-bold text-white mb-8">Code Examples</h2>
             <p className="text-slate-400 mb-6">
               All DevHub APIs use the MCP (Model Context Protocol) - a JSON-RPC 2.0 based protocol.
-              Here's how to make your first API call:
+              Here&apos;s how to make your first API call:
             </p>
 
             <div className="space-y-6">
@@ -204,7 +204,7 @@ export default function DocsPage() {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-1">tools/call</h3>
-                    <p className="text-slate-400 text-sm">Execute a specific tool with parameters. Returns the tool's output or result.</p>
+                    <p className="text-slate-400 text-sm">Execute a specific tool with parameters. Returns the tool&apos;s output or result.</p>
                   </div>
                 </div>
               </div>

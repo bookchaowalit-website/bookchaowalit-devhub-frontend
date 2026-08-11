@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Play, Code2, Terminal, Copy, Check, RefreshCw } from 'lucide-react';
 
 const APIS = [
@@ -65,9 +66,9 @@ export default function PlaygroundPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 to-slate-800">
       <div className="container mx-auto px-4 py-12">
-        <a href="/" className="inline-flex items-center text-slate-400 hover:text-white mb-8">
+        <Link href="/" className="inline-flex items-center text-slate-400 hover:text-white mb-8">
           ← Back to DevHub
-        </a>
+        </Link>
 
         <div className="max-w-6xl">
           <div className="text-center mb-12">
@@ -176,7 +177,7 @@ export default function PlaygroundPage() {
                   <div className="flex flex-col items-center justify-center h-full text-slate-500">
                     <Terminal className="w-16 h-16 mb-4 opacity-50" />
                     <p>Response will appear here</p>
-                    <p className="text-sm mt-2">Click "Send Request" to test the API</p>
+                    <p className="text-sm mt-2">Click &quot;Send Request&quot; to test the API</p>
                   </div>
                 )}
               </div>

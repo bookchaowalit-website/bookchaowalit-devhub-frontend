@@ -1,42 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DevHub
 
-## Getting Started
+An API developer portal for the bookchaowalit portfolio — a catalog and
+live browser-based playground for the [MCP](https://modelcontextprotocol.io)
+servers exposed by 5 sibling projects (Portfolio, Tech Blog, Art Blog,
+Tech Space, MCP List Hub).
 
-First, run the development server:
+See [`PRODUCT.md`](./PRODUCT.md) for the interview case study — including
+the headline finding of this pass: the Playground's core feature (testing
+APIs live from the browser) was broken for all 5 listed APIs due to
+missing CORS headers on the target endpoints, fixed across this repo and
+the 4 sibling repos it depends on.
+
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/app/
+├── page.tsx           # homepage: API catalog, stats, feature grid
+├── apis/[id]/          # per-API detail page (endpoints, descriptions)
+├── playground/          # live browser-based MCP request tester
+├── docs/                 # documentation
+└── more-projects/        # directory of sibling bookchaowalit-* products
+```
 
-## Learn More
+## Status
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## Related
-
-- **Mobile App:** [bookchaowalit-devhub-mobile](https://github.com/bookchaowalit-mobile/bookchaowalit-devhub-mobile)
-- **Portfolio:** [bookchaowalit.com](https://bookchaowalit.com)
-
+Live functionality, generic metadata — the README and page title never
+left `create-next-app` defaults despite real routes existing underneath.
+Fixed in this pass; see `PRODUCT.md`.
