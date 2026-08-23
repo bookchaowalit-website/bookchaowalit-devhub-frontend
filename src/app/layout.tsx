@@ -71,6 +71,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* THESIS: DevHub is a tactile API routing layer, not a generic SaaS dashboard. OWN-WORLD: dark silk, tensioned gold cords, and a quiet request console turn service discovery into a physical fabric. STORY: find a line, read its contract, run the request. FIRST VIEWPORT: name the portal, show a real request shape, and point directly to the playground. FORM: seed 505a76e5 / assigned textile drawcord direction, used as restrained cable geometry and material contrast. FINISH: warm metallic signal, hairline rules, compact mono labels, and no invented health claims. */}
         <Analytics />
         <SpeedInsights />
         {children}
